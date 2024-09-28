@@ -1,0 +1,32 @@
+create database todolist;
+
+use todolist;
+
+
+
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) ,
+    assignto VARCHAR(255),
+    status ENUM('COMPLETED','INPROGRESS','NOT STARTED'),
+    duedate DATETIME,
+    priority ENUM('LOW','NORMAL','HIGH'),
+    description VARCHAR(255),
+);
+
+
+
+insert into tasks values(1,"Running","shreyash","NOT STARTED","2023-03-02","HIGH","20 min");
+insert into tasks values(2,"demo","demo","INPROGRESS","2023-03-01","NORMAL","demo");
+insert into tasks values(3,"demo2","demo2","COMPLETED","2023-03-03","LOW","demo2");
+insert into tasks values(4,"demo3","demo3","NOT STARTED","2023-03-04","HIGH","demo3");
+insert into tasks values(5,"demo4","demo4","INPROGRESS","2023-03-05","NORMAL","demo4");
+
+
+
+POSTMAN Links-
+
+GET - http://localhost:5000/api/tasks
+POST - http://localhost:5000/api/tasks
+PUT - http://localhost:5000/api/tasks/{id}
+DELETE - http://localhost:5000/api/tasks/{id}
